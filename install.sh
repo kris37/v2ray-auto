@@ -28,11 +28,11 @@ function randomPasswd()
 ENCRYPTION="aes-128-gcm"
 SERVICE_IP=`ip route get 1 | awk '{print $NF;exit}'`
 #LOCAL_IP=`hostname -I | cut -d' ' -f1`
-UUID=`cat /proc/sys/kernel/random/uuid`
+UUID=`cat /proc/sys/kernel/random/uuid `
 V2RAY_PASSWORD=$(randomPasswd 32)
 
-echo ${UUID} >> "${V2RAY_HOME}/v2ray.password"
-echo ${V2RAY_PASSWORD} > "${V2RAY_HOME}/v2ray.password"
+echo ${UUID} > "${V2RAY_HOME}/v2ray.password"
+echo ${V2RAY_PASSWORD} >> "${V2RAY_HOME}/v2ray.password"
 echo ${SERVICE_IP} >> "${V2RAY_HOME}/v2ray.password"
 echo ${ENCRYPTION} >> "${V2RAY_HOME}/v2ray.password"
 
@@ -44,10 +44,10 @@ git clone https://github.com/kris37/v2ray-auto.git
 echo "${V2RAY_HOME}/v2ray-auto/${service_git_conf}"
 mv "${V2RAY_HOME}/v2ray-auto/${service_git_conf}" ${CONF_PATH}
 
-sed -i 's/ENCRYPTION/"${ENCRYPTION}"/g' ${CONF_PATH}
-sed -i 's/SERVICE_IP/"${SERVICE_IP}"/g' ${CONF_PATH}
-sed -i 's/UUID/"${UUID}"/g' ${CONF_PATH}
-sed -i 's/PASSWD/"${V2RAY_PASSWORD}"/g' ${CONF_PATH}
+sed -i "s/ENCRYPTION/${ENCRYPTION}/g" ${CONF_PATH}
+sed -i "s/SERVICE_IP/${SERVICE_IP}/g" ${CONF_PATH}
+sed -i "s/UUID/${UUID}/g" ${CONF_PATH}
+sed -i "s/PASSWD/${V2RAY_PASSWORD}/g" ${CONF_PATH}
 
 #docker /usr/bin/v2ray/v2ray -test -config "${CONF_HOME}"
 
