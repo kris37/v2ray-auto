@@ -29,7 +29,7 @@ ENCRYPTION="aes-128-gcm"
 SERVICE_IP=`ip route get 1 | awk '{print $NF;exit}'`
 #LOCAL_IP=`hostname -I | cut -d' ' -f1`
 UUID=`cat /proc/sys/kernel/random/uuid`
-V2RAY_PASSWORD=$(randomstring 32)
+V2RAY_PASSWORD=$(randomPasswd 32)
 
 echo ${UUID} >> "${V2RAY_HOME}/v2ray.password"
 echo ${V2RAY_PASSWORD} > "${V2RAY_HOME}/v2ray.password"
