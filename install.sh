@@ -42,11 +42,11 @@ yum install -y git
 git clone https://github.com/kris37/v2ray-auto.git
 
 
-mv "v2ray-auto/${service_git_conf}" ${CONF_PATH}
-sed -i 's/ENCRYPTION/${ENCRYPTION}/g' ${CONF_PATH}
-sed -i 's/SERVICE_IP/${SERVICE_IP}/g' ${CONF_PATH}
-sed -i 's/UUID/${UUID}/g' ${CONF_PATH}
-sed -i 's/PASSWD/${V2RAY_PASSWORD}/g' ${CONF_PATH}
+mv 'v2ray-auto/"${service_git_conf}"' ${CONF_PATH}
+sed -i 's/ENCRYPTION/"${ENCRYPTION}"/g' ${CONF_PATH}
+sed -i 's/SERVICE_IP/"${SERVICE_IP}"/g' ${CONF_PATH}
+sed -i 's/UUID/"${UUID}"/g' ${CONF_PATH}
+sed -i 's/PASSWD/"${V2RAY_PASSWORD}"/g' ${CONF_PATH}
 
 #docker /usr/bin/v2ray/v2ray -test -config "${CONF_HOME}"
 
