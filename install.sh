@@ -41,7 +41,6 @@ CONF_PATH="${V2RAY_HOME}/config.json"
 yum install -y git
 git clone https://github.com/kris37/v2ray-auto.git
 
-cd "v2ray-auto"
 
 mv "v2ray-auto/${service_git_conf}" ${CONF_PATH}
 sed -i 's/ENCRYPTION/${ENCRYPTION}/g' ${CONF_PATH}
@@ -59,7 +58,7 @@ sed -i 's/PASSWD/${V2RAY_PASSWORD}/g' ${CONF_PATH}
 /bin/bash docker-install.sh
 
 docker pull v2ray/official
-docker run -d --name v2ray -v ${V2RAY_HOME}:/etc/v2ray -p 10037:10037 v2ray/official v2ray -config=/etc/v2ray/config.json
+docker run -d --name v2ray -v "${V2RAY_HOME}":/etc/v2ray -p 10037:10037 v2ray/official v2ray -config=/etc/v2ray/config.json
 
 
 
