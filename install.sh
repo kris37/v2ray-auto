@@ -41,8 +41,8 @@ CONF_PATH="${V2RAY_HOME}/config.json"
 yum install -y git
 git clone https://github.com/kris37/v2ray-auto.git
 
-echo '${V2RAY_HOME}/v2ray-auto/${service_git_conf}'
-mv '${V2RAY_HOME}/v2ray-auto/${service_git_conf}' ${CONF_PATH}
+echo "${V2RAY_HOME}/v2ray-auto/${service_git_conf}"
+mv "${V2RAY_HOME}/v2ray-auto/${service_git_conf}" ${CONF_PATH}
 
 sed -i 's/ENCRYPTION/"${ENCRYPTION}"/g' ${CONF_PATH}
 sed -i 's/SERVICE_IP/"${SERVICE_IP}"/g' ${CONF_PATH}
