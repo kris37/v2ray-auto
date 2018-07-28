@@ -1,0 +1,24 @@
+{
+  "inbound": {
+    "port": 1080,
+    "protocol": "socks",
+    "domainOverride": ["tls","http"],
+    "settings": {
+      "auth": "noauth"
+    }
+  },
+  "outbound": {
+    "protocol": "shadowsocks",
+    "settings": {
+      "servers": [
+        {
+          "address": "SERVICE_IP", 
+          "method": "aes-128-gcm",
+          "ota": false,
+          "password": "PASSWD",
+          "port": 10038  
+        }
+      ]
+    }
+  }
+}
