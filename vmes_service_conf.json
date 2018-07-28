@@ -1,6 +1,6 @@
 {
   "inbound": {
-    "port": 10037,
+    "port": EXPORT,
     "protocol": "vmess",
     "settings": {
       "clients": [
@@ -22,8 +22,7 @@
           "type": "wechat-video"
         }
       }
-    }
-  },
+    },
   "outbound": {
     "protocol": "freedom",
     "settings": {}

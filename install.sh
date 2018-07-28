@@ -14,7 +14,7 @@ if [[ "$1" == "ss" ]]; then
 		service_git_conf="vmes_service_conf.json"
 fi
 
-
+EXPORT=10037
 V2RAY_HOME="/opt/v2ray"
 mkdir "${V2RAY_HOME}"
 cd "${V2RAY_HOME}"
@@ -48,6 +48,7 @@ sed -i "s/ENCRYPTION/${ENCRYPTION}/g" ${CONF_PATH}
 sed -i "s/SERVICE_IP/${SERVICE_IP}/g" ${CONF_PATH}
 sed -i "s/UUID/${UUID}/g" ${CONF_PATH}
 sed -i "s/PASSWD/${V2RAY_PASSWORD}/g" ${CONF_PATH}
+sed -i "s/EXPORT/${EXPORT}/g" ${CONF_PATH}
 
 #docker /usr/bin/v2ray/v2ray -test -config "${CONF_HOME}"
 
@@ -60,7 +61,7 @@ sed -i "s/PASSWD/${V2RAY_PASSWORD}/g" ${CONF_PATH}
 
 docker pull v2ray/official
 docker rm v2ray
-docker run -d --name v2ray -v "${V2RAY_HOME}":/etc/v2ray -p 10037:10037 v2ray/official v2ray -config=/etc/v2ray/config.json
+docker run -d --name v2ray -v "${V2RAY_HOME}":/etc/v2ray -p ${EXPORT}:${EXPORT} v2ray/official v2ray -config=/etc/v2ray/config.json
 
 
 

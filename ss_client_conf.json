@@ -16,7 +16,7 @@
           "method": "aes-128-gcm",
           "ota": false,
           "password": "PASSWD",
-          "port": 10038  
+          "port": EXPORT  
         }
       ]
     }

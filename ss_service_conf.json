@@ -1,6 +1,6 @@
 {
   "inbound": {
-    "port": 10038,
+    "port": EXPORT,
     "protocol": "shadowsocks",
     "settings": {
       "method": "aes-128-gcm",

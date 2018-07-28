@@ -13,7 +13,7 @@
       "vnext": [
         {
           "address": "SERVICE_IP",
-          "port": 10037,
+          "port": EXPORT,
           "users": [
             {
               "id": "UUID",
