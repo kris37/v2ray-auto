@@ -60,6 +60,7 @@ sed -i "s/EXPORT/${EXPORT}/g" ${CONF_PATH}
 /bin/bash ${V2RAY_HOME}/v2ray-auto/docker-install.sh
 
 docker pull v2ray/official
+#docker ps -a |awk  '{print$1}'|tail -n +2|xargs docker rm
 docker rm v2ray
 docker run -d --name v2ray -v "${V2RAY_HOME}":/etc/v2ray -p ${EXPORT}:${EXPORT} v2ray/official v2ray -config=/etc/v2ray/config.json
 
