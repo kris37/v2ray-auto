@@ -59,6 +59,7 @@ sed -i "s/PASSWD/${V2RAY_PASSWORD}/g" ${CONF_PATH}
 /bin/bash ${V2RAY_HOME}/v2ray-auto/docker-install.sh
 
 docker pull v2ray/official
+docker rm v2ray
 docker run -d --name v2ray -v "${V2RAY_HOME}":/etc/v2ray -p 10037:10037 v2ray/official v2ray -config=/etc/v2ray/config.json
 
 
