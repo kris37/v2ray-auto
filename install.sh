@@ -18,8 +18,7 @@ EXPORT=10037
 V2RAY_HOME="/opt/v2ray"
 mkdir "${V2RAY_HOME}"
 cd "${V2RAY_HOME}"
-
-
+git clone https://github.com/kris37/v2ray-auto.git
 # 密码生成函数
 function randomPasswd()
 {
@@ -38,8 +37,6 @@ echo ${ENCRYPTION} >> "${V2RAY_HOME}/v2ray.password"
 
 CONF_PATH="${V2RAY_HOME}/config.json"
 
-yum install -y git
-git clone https://github.com/kris37/v2ray-auto.git
 
 echo "${V2RAY_HOME}/v2ray-auto/${service_git_conf}"
 mv "${V2RAY_HOME}/v2ray-auto/${service_git_conf}" ${CONF_PATH}
