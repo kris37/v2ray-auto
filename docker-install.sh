@@ -17,7 +17,7 @@ sudo yum-config-manager --enable docker-ce-test
 
 sudo yum install -y docker-ce
 
-dockerlist = `yum list docker-ce --showduplicates | sort -r`
+dockerlist=`yum list docker-ce --showduplicates | sort -r`
 echo ${dockerlist}
 #sudo yum install ${dockerversion}
 sudo systemctl start docker
