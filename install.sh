@@ -24,7 +24,7 @@ function randomPasswd()
 {
     cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1
 }
-ENCRYPTION="aes-128-gcm"
+ENCRYPTION="aes-128-cfb"
 SERVICE_IP=`ip route get 1 | awk '{print $NF;exit}'`
 #LOCAL_IP=`hostname -I | cut -d' ' -f1`
 UUID=`cat /proc/sys/kernel/random/uuid `
