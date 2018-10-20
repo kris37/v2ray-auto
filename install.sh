@@ -1,6 +1,8 @@
 #!/bin/bash
 source /etc/profile
 
+yum install -y git && yum install -y vim
+
 service_git_conf=""
 if [[ "$1" == "ss" ]]; then
 		service_git_conf="ss_service_conf.json"
