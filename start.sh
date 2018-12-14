@@ -4,7 +4,7 @@ source /etc/profile
 if [[ $# -eq 1 ]]; then
 	service="$1"
 else
-	service="vmes"
+	service="ss"
 fi
 
 echo "install ${service} on /opt/v2ray "
