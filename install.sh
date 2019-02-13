@@ -16,7 +16,7 @@ if [[ "$1" == "ss" ]]; then
 		service_git_conf="vmes_service_conf.json"
 fi
 
-EXPORT=10037
+EXPORT=80
 V2RAY_HOME="/opt/v2ray"
 mkdir "${V2RAY_HOME}"
 cd "${V2RAY_HOME}"
